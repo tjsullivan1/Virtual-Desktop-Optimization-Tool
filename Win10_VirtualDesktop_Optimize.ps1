@@ -175,7 +175,7 @@ PROCESS {
             If ($UserSettings.Count -gt 0) {
                 Write-WVDLog -Message "Processing Default User Settings (Registry Keys)" -Level Verbose -Tag "UserSettings"
 
-                & REG LOAD HKLM\VDOT_TEMP C:\Users\Default\NTUSER.DAT | Out-Null
+                & REG LOAD HKLM\DEFAULT C:\Users\Default\NTUSER.DAT | Out-Null
 
                 Foreach ($Item in $UserSettings) {
                     If ($Item.PropertyType -eq "BINARY") { $Value = [byte[]]($Item.PropertyValue.Split(",")) }
@@ -195,7 +195,7 @@ PROCESS {
                     }
                 }
 
-                & REG UNLOAD HKLM\VDOT_TEMP | Out-Null
+                & REG UNLOAD HKLM\DEFAULT | Out-Null
             }
             Else { Write-WVDLog -Message ("No Default User Settings to set") -Level Warning -Tag "UserSettings" -OutputToScreen }
         }
