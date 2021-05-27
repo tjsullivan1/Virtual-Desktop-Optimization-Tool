@@ -1,3 +1,7 @@
+> **Please be sure to participate in our NEW survey!**
+>
+> [VDI Optimization User Experience Survey](https://forms.office.com/r/gN02UxDQmf)
+
 # Introduction
 
 The tool-set in this repository was created to automatically apply setting referenced in white paper:
